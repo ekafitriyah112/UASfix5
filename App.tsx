@@ -3,6 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import Home from './src/component/Home';
+import Barang from './src/component/Barang';
+import Akun from './src/component/Akun';
+
 
 const App = () => {
   const Tab = createBottomTabNavigator();
@@ -14,7 +17,11 @@ const App = () => {
             let iconName;
             if (route.name === 'Home') {
               iconName = focused ? 'home' : 'home-outline';
-            } 
+            } else if (route.name === 'Barang') {
+              iconName = focused ? 'bag-handle-outline' : 'bag-remove-outline';
+            } else if (route.name === 'Akun') {
+              iconName = focused ? 'person-circle-outline' : 'person-outline';
+            }
             return <Ionic name={iconName} size={size} color={color} />;
           },
           headerShown: false,
@@ -29,6 +36,8 @@ const App = () => {
           },
         }}>
         <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Barang" component={Barang} />
+        <Tab.Screen name="Akun" component={Akun} />
       </Tab.Navigator>
     </NavigationContainer>
   );
