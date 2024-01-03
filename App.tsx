@@ -15,7 +15,9 @@ const App = () => {
             let iconName;
             if (route.name === 'Home') {
               iconName = focused ? 'home' : 'home-outline';
-            } 
+            } else if (route.name === 'Barang') {
+              iconName = focused ? 'bag-handle-outline' : 'bag-remove-outline';
+            }
             return <Ionic name={iconName} size={size} color={color} />;
           },
           headerShown: false,
@@ -30,6 +32,7 @@ const App = () => {
           },
         }}>
         <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Barang" component={Barang} />
       </Tab.Navigator>
     </NavigationContainer>
   );
