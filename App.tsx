@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import Home from './src/component/Home';
+import Barang from './src/component/Barang';
 
 const App = () => {
   const Tab = createBottomTabNavigator();
